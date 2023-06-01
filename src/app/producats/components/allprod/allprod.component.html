@@ -1,0 +1,13 @@
+<div class="box mt-5">
+    <div class="my-2 w-25">
+        <app-select [data]="categories" [title]="'categories'" (selectedvalue)="getfilter($event)"></app-select>
+    </div>
+<div class="row" *ngIf="!loading">
+    <div class="col-md col-sm-12" *ngFor="let i of producats" >
+       <app-producat [data]="i" (item)="addtocart($event)"></app-producat>
+    </div>
+</div>
+<div class="text-center w-100" *ngIf="loading">
+    <app-spliter></app-spliter> 
+</div>
+</div>
